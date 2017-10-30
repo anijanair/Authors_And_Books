@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+# Create model for author
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=255)
+    about = models.TextField()
