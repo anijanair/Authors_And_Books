@@ -11,3 +11,12 @@ class Author(models.Model):
         return self.name
 
 
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    order = models.IntegerField(default=0)
+    author = models.ForeignKey(Author)
+
+    def __str__(self):
+        return self.title
+
