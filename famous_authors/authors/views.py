@@ -8,5 +8,4 @@ from .models import Author
 
 def author_list(request):
     authors = Author.objects.all()
-    output = ', '.join([str(author) for author in authors])
-    return HttpResponse(output)
+    return render(request, 'authors/author_list.html', {'authors': authors})
