@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}{{book.title}}-{{book.author.title}}{% endblock %}
+{%block content %}
+<article>
+    <h2>{{book.author.title}}</h2>
+    <h3>{{book.title}}</h3>
+
+    {{step.content|linebreaks}}
+</article>
+{% endblock %}

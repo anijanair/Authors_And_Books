@@ -17,6 +17,9 @@ class Book(models.Model):
     order = models.IntegerField(default=0)
     author = models.ForeignKey(Author)
 
+    class Meta:
+        ordering = ['order',]
+
     def __str__(self):
         return self.title
 
