@@ -14,6 +14,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    review = models.TextField(blank=True, null=True)
     order = models.IntegerField(default=0)
     author = models.ForeignKey(Author)
 
