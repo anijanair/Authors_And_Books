@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
-{% block title %}{{book.title}}-{{book.author.title}}{% endblock %}
-{%block content %}
+{% block title %}{{book.title}}-{{book.author.name}}{% endblock %}
+{% block content %}
 <article>
-    <h2>{{book.author.title}}</h2>
+    <h2><a href="{% url 'authors:detail' pk=book.author.pk %}">{{book.author.name}}</a></h2>
     <h3>{{book.title}}</h3>
-
     {{book.review|linebreaks}}
 </article>
 {% endblock %}

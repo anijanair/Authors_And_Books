@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 
-{% block title %}{{ author.name }}{% endblock %}
-
+{% block title %}{{author.name}}{% endblock %}
 {% block content %}
-<article>
-    <h2>{{ author.name}}</h2>
-    {{ author.about }}
+    <article>
+        <h2>{{author.name}}</h2>
+        {{author.about}}
 
-    <section>
-        {% for book in author.book_set.all %}
-        <h3>{{book.title}}</h3>
-        {{ book.description}}
-        {% endfor %}
-    </section>
-</article>
+        <section>
+            {% for book in author.book_set.all %}
+            <h3>
+                <a href="{% url 'authors:book' author_pk=book.author.pk book_pk=book.pk %}">{{book.title}}</a>
+            </h3>
+            {{book.description}}
+            {% endfor %}
+        </section>
+    </article>
 {% endblock %}

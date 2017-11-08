@@ -1,14 +1,18 @@
 {% load static from staticfiles %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     </head>
     <body>
-    <div class="site-container">
-    {% block content %}{% endblock %}
-    </div>
+        <div class="site-container">
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'authors:list' %}">Authors</a>
+            </nav>
+        {% block content %}{% endblock %}
+        </div>
     </body>
 </html>

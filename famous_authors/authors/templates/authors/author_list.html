@@ -1,4 +1,15 @@
-{% for author in authors %}
-<h2>{{ author.name }}</h2>
-{{ author.about }}
-{% endfor %}
+{% extends "layout.html" %}
+
+{% block title %}Favorite Authors{% endblock %}
+{% block content %}
+<div class="cards">
+    {% for author in authors %}
+    <div class="card">
+        <header><a href="{% url 'authors:detail' pk=author.pk %}">{{author.name}}</a></header>
+        <div class="card-copy">
+            {{author.about}}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
