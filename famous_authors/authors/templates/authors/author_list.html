@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 
+{% block static %}<link rel="stylesheet" href="{% static 'authors/css/authors.css' %}">{% endblock %}
 {% block title %}Favorite Authors{% endblock %}
 {% block content %}
 <div class="cards">
