@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% load static from staticfiles %}
 
+<!-- template for author details  -->
 {% block static %}<link rel="stylesheet" href="{% static 'authors/css/authors.css' %}">{% endblock %}
 {% block title %}Favorite Authors{% endblock %}
 {% block content %}
@@ -9,7 +10,12 @@
     <div class="card">
         <header><a href="{% url 'authors:detail' pk=author.pk %}">{{author.name}}</a></header>
         <div class="card-copy">
-            {{author.about}}
+            {% if author.about|wordcount <= 8 %}
+                {{ author.about }}
+            {% else %}
+                {{ author.about|truncatewords:8 }}
+            <a href="{% url 'authors:detail' pk=author.pk %}">Read more</a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

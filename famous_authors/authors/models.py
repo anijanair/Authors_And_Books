@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create model for author
 
+# Model for author
 
 class Author(models.Model):
     name = models.CharField(max_length=255)
@@ -10,6 +10,7 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+# Model for Book
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
