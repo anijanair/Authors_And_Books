@@ -13,7 +13,7 @@ Access localhost:8000 at http://127.0.0.1:8000/ after running the server.
 
 As of now the CRUD functionalities work only at : localhost:8000/admin/
 
-For django admin access: login is 'anija' ,
+For django admin access: login is 'anija' , password is anija123
 
 
 Modifications planned for future:
